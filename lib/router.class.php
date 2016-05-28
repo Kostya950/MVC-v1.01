@@ -130,4 +130,9 @@ class Router
 
     }
 
+    public static function redirect ($location)
+    {
+        header("Location: $location");
+    }
+
 }
