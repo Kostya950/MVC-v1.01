@@ -6,7 +6,7 @@
  * Time: 15:51
  */
 
-Config::set('site_name','Your site name');
+Config::set('site_name','News');
 
 Config::set('languages', array('en','fr'));
 
@@ -24,7 +24,7 @@ Config::set('default_action', 'index');
 Config::set('db.host', 'localhost');
 Config::set('db.user', 'root');
 Config::set('db.password', '111111');
-Config::set('db.db_name', 'mvc');
+Config::set('db.db_name', 'module_4_news');
 
 
 Config::set('salt','jd7sj3sdkd964he7e');
