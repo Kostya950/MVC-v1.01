@@ -1,9 +1,15 @@
-<h3>Pages</h3><br>
-
-<table class="table table-striped" style="width: 400px;">
-    <?php foreach ($data['pages'] as $page_data) { ?>
+<h3>News</h3><br>
+<div>
+    <a href="/admin/pages/add/"><button class="btn btn-sm btn-success">Add News</button></a>
+</div>
+<table class="table table-striped" style="width: 800px;">
+    <?php
+    $i = 0;
+    foreach ($data['pages1'] as $page_data) {
+        $i++;?>
         <tr>
-            <td><b><?=$page_data['title']?></b></td>
+            <td><?=$i?></td>
+            <td><b><?=$page_data['news_name']?></b></td>
             <td align="right">
                 <a href="/admin/pages/edit/<?=$page_data['id']?>"><button class="btn btn-sm btn-primary">edit</button></a>
                 <a href="/admin/pages/delete/<?=$page_data['id']?>" onclick="return confirmDelete()"><button class="btn btn-sm btn-warning">delete</button></a>
@@ -12,6 +18,3 @@
     <?php } ?>
 </table>
 
-<div>
-    <a href="/admin/pages/add/"><button class="btn btn-sm btn-success">New Page</button></a>
-</div>

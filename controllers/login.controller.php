@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: kito
- * Date: 28.05.16
- * Time: 12:13
+ * Date: 02.06.16
+ * Time: 20:11
  */
 
-class UsersController extends Controller
+class LoginController extends Controller
 {
     public function __construct($data = array())
     {
@@ -14,7 +14,7 @@ class UsersController extends Controller
         $this->model = new User();
     }
 
-    public function admin_login()
+    public function index()
     {
         if($_POST && isset($_POST['login']) && isset($_POST['password'])) {
             $user = $this->model->getByLogin($_POST['login']);
@@ -22,15 +22,10 @@ class UsersController extends Controller
             if($user && $user['is_active'] && $hash == $user['password']) {
                 Session::set('login', $user['login']);
                 Session::set('role', $user['role']);
+                Router::redirect('/pages/');
             }
-            Router::redirect('/admin/');
+
         }
-    }
 
-
-    public function admin_logout()
-    {
-        Session::destroy();
-        Router::redirect('/login/');
     }
 }
